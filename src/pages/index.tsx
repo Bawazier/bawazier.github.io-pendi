@@ -1,9 +1,23 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Head from "next/head";
+import {
+  Container,
+  Box,
+  Flex,
+  Spacer,
+  Button,
+  Icon,
+  Grid,
+  GridItem,
+  Stack,
+  IconButton,
+  Heading,
+  Divider,
+} from "@chakra-ui/react";
+import { FaGithub } from "@react-icons/all-files/fa/FaGithub";
+import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
+import { FaCodepen } from "@react-icons/all-files/fa/FaCodepen";
+import { FaDocker } from "@react-icons/all-files/fa/FaDocker";
+import { TiFlash } from "@react-icons/all-files/ti/TiFlash";
 
 export default function Home() {
   return (
@@ -14,110 +28,102 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+      <Container h="100vh" maxW="full" bgColor="brand.content" py="10" px="1">
+        <Grid
+          w="full"
+          h="full"
+          templateRows="repeat(1, 1fr)"
+          templateColumns="repeat(12, 1fr)"
+          gap={1}
+        >
+          <GridItem colSpan={1} px="5">
+            <Flex direction="column" height="full">
+              <Button
+                size="sm"
+                variant="ghost"
+                colorScheme="brand"
+                fontSize="2xs"
+                fontFamily="title"
+                color="brand.title-color"
+              >
+                M
+              </Button>
+              <Spacer />
+              <Stack spacing="4">
+                <IconButton
+                  variant="link"
+                  size="md"
+                  aria-label="Search database"
+                  color="brand.title-color"
+                  icon={<Icon as={FaGithub} />}
+                />
+                <IconButton
+                  variant="link"
+                  size="md"
+                  aria-label="Search database"
+                  color="brand.title-color"
+                  icon={<Icon as={FaLinkedinIn} />}
+                />
+                <IconButton
+                  variant="link"
+                  size="md"
+                  aria-label="Search database"
+                  color="brand.title-color"
+                  icon={<Icon as={FaCodepen} />}
+                />
+                <IconButton
+                  variant="link"
+                  size="md"
+                  aria-label="Search database"
+                  color="brand.title-color"
+                  icon={<Icon as={FaDocker} />}
+                />
+                <IconButton
+                  variant="link"
+                  size="md"
+                  aria-label="Search database"
+                  color="brand.title-color"
+                  icon={<Icon as={TiFlash} />}
+                />
+              </Stack>
+              <Spacer />
+              <Box></Box>
+            </Flex>
+          </GridItem>
+          <GridItem colSpan={6} px="5">
+            <Stack justify="center" h="full" spacing="8">
+              <Divider width="20" borderColor="brand.border-color" />
+              <Stack color="brand.subtitle-color" spacing="-6">
+                <Heading
+                  as="h1"
+                  fontFamily="title"
+                  fontWeight="bold"
+                  fontSize="8xl"
+                >
+                  Hello<span style={{ opacity: "60%" }}>.</span>
+                </Heading>
+                <Heading
+                  as="h1"
+                  fontFamily="title"
+                  fontWeight="bold"
+                  fontSize="8xl"
+                >
+                  I am
+                </Heading>
+                <Heading
+                  as="h1"
+                  fontFamily="title"
+                  fontWeight="bold"
+                  fontSize="8xl"
+                >
+                  MUHAMMAD
+                </Heading>
+              </Stack>
+            </Stack>
+          </GridItem>
+          <GridItem colSpan={5} px="5"></GridItem>
+        </Grid>
+      </Container>
     </>
-  )
+  );
 }
